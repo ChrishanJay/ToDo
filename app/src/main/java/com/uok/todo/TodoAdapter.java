@@ -22,10 +22,12 @@ public class TodoAdapter extends RecyclerView.Adapter<TodoAdapter.ViewHolder> {
 
     private List<Todo> todoList;
     private Context context;
+    private String userId;
 
-    public TodoAdapter( Context context, List<Todo> todoList) {
+    public TodoAdapter( Context context, List<Todo> todoList, String userId) {
         this.todoList = todoList;
         this.context = context;
+        this.userId = userId;
     }
 
     @NonNull
@@ -50,13 +52,15 @@ public class TodoAdapter extends RecyclerView.Adapter<TodoAdapter.ViewHolder> {
                 data.setStatus(isChecked);
 
                 APIService service = APIClient.getAPIClient().create(APIService.class);
-                Call<APIResponse> updateItem = service.updateItem("a@a.com", todo.getId(), data);
+                Call<APIResponse> updateItem = service.updateItem(userId, todo.getId(), data);
                 updateItem.enqueue(new Callback<APIResponse>() {
                     @Override
                     public void onResponse(Call<APIResponse> call, Response<APIResponse> response) {
                         APIResponse apiResponse = response.body();
-                        Todo todo1 = apiResponse.getItems().get(0);
-                        Log.e("TODO", "onResponse: "+ todo1.getData().isStatus());
+                        if (apiResponse != null){
+                            Todo todo1 = apiResponse.getItems().get(0);
+                            Log.e("TODO", "onResponse: "+ todo1.getData().isStatus());
+                        }
                     }
 
                     @Override
