@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "729764631776",
+    "firebase_url": "https://uok-todo.firebaseio.com",
+    "project_id": "uok-todo",
+    "storage_bucket": "uok-todo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:729764631776:android:d632dbd84e3013f9052c85",
+        "android_client_info": {
+          "package_name": "com.uok.todo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "729764631776-55hgka2531467ge28if6ufgs9orfcg0m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdOrXTGA_QHY8b7jRRPtVqj7Oxqnrawuk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "729764631776-55hgka2531467ge28if6ufgs9orfcg0m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
